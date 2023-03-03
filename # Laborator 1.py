@@ -34,10 +34,12 @@ def Problema2(matrice: list, numar: int) -> bool:
 
 '''
 Problema 3:
-Sa se defineasca o functie recursiva care calculeaza factorialul unui numar.
-Sa se defineasca o functie recursiva care calculeaza suma cifrelor unui numar.
+1. Sa se defineasca o functie recursiva care calculeaza factorialul unui numar.
+2. Sa se defineasca o functie recursiva care calculeaza suma cifrelor unui numar.
+3. Sa se defineasca o functie recursiva care returneaza numarul de cifre 0 dintr-un numar.
 '''
 
+# 1. Sa se defineasca o functie recursiva care calculeaza factorialul unui numar.
 def Problema3_1(numar: int) -> int:
     if numar == 0:
         return 1
@@ -45,25 +47,32 @@ def Problema3_1(numar: int) -> int:
         return numar * Problema3_1(numar - 1)
     
 
+# 2. Sa se defineasca o functie recursiva care calculeaza suma cifrelor unui numar.
 def Problema3_2(numar: int) -> int:
     if numar == 0:
         return 0
     else:
         return numar % 10 + Problema3_2(numar // 10)
     
-    
+
+# 3. Sa se defineasca o functie recursiva care returneaza numarul de cifre 0 dintr-un numar.
 def Problema3_3(numar: int) -> int:
-    if numar > 9:
+    if numar == 0:
+        return 1
+    elif numar < 10:
+        return 0
+    else:
         if numar % 10 == 0:
             return 1 + Problema3_3(numar // 10)
         else:
             return Problema3_3(numar // 10)
-    else:
-        if numar == 0:
-            return 1
-        else:
-            return 0
-        
+           
+           
+'''
+Problema 4:
+Sa se defineasca o functie care aplica algoritmul de sortare Bubble Sort.
+'''
+     
         
 def Problema4(lista: list) -> list:
     flag = True
@@ -79,16 +88,15 @@ def Problema4(lista: list) -> list:
 
 
 if __name__ =="__main__":
-    '''
     print("Problema 1:")
-    print("Varianta 1:")
+    print("Varianta 1 (lista definita in cod):")
     numar = int(input("Introduceti un numar: "))
     
     lista = [10, 15, 2, 20, 123, 543, 456, 76, 345, 76546, 123412]
     
     print(Problema1(lista, numar))
     
-    print("Varianta 2:")
+    print("Varianta 2 (lista citita de la tastatura):")
     numar_elemente = int(input("Introduceti numarul de elemente al listei: "))
     
     lista = []
@@ -101,7 +109,7 @@ if __name__ =="__main__":
     print(Problema1(lista, numar))
     
     print("Problema 2:")
-    print("Varianta 1:")
+    print("Varianta 1 (matrice definita in cod):")
     
     numar = int(input("Introduceti un numar: "))
     
@@ -111,7 +119,7 @@ if __name__ =="__main__":
     
     print(Problema2(matrice, numar))
     
-    print("Varianta 2:")
+    print("Varianta 2 (matrice citita de la tastatura):")
     numar_lin = int(input("Introduceti numarul de linii al matricei: "))
     numar_col = int(input("Introduceti numarul de coloane al matricei: "))
     
@@ -126,27 +134,39 @@ if __name__ =="__main__":
     numar = int(input("Introduceti numarul cautat: "))
     
     print(Problema2(matrice, numar))
-    '''
-    '''
+
     print("Problema 3:")
-    print("Functia 1:")
+    print("Functia 1 (factorial):")
     
     numar = int(input("Introduceti un numar: "))
     
     print(Problema3_1(numar))
     
-    print("Functia 2:")
+    print("Functia 2 (suma cifre):")
     
     numar = int(input("Introduceti un numar: "))
     
     print(Problema3_2(numar))
     
-    print("Functia 3:")
+    print("Functia 3 (numar zerouri):")
     
     numar = int(input("Introduceti un numar: "))
     
     print(Problema3_3(numar))
-    '''
+    
+    print("Problema 4:")
+    print("Varianta 1 (lista definita in cod):")
     
     lista = [2, 5, 4, 3, 7]
+    print(*Problema4(lista))
+    
+    print("Varianta 2 (lista citita de la tasatura):")
+    
+    numar_elemente = int(input("Introduceti numarul de elemente al listei: "))
+    
+    lista = []
+    
+    for indice in range(numar_elemente):
+        lista.append(int(input(f'Introduceti elementul {indice + 1} al listei: ')))
+        
     print(*Problema4(lista))
