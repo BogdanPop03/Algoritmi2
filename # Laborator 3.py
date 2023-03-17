@@ -46,12 +46,43 @@ def prob2(matrice: list) -> list:
     return matrice
 
 
-# Problema 3
-# 
+# Merge sort
+
+def unire(st: list, dr: list):
+    rezultat = []
+    i, j = 0, 0
+    
+    while i < len(st) and j < len(dr):
+        if st[i] < dr[j]:
+            rezultat.append(st[i])
+            i += 1
+        else:
+            rezultat.append(dr[j])
+            j += 1
+    
+    while i < len(st):
+        rezultat.append(st[i])
+        i += 1
+        
+    while j < len(dr):
+        rezultat.append(dr[j])
+        j += 1
+        
+    return rezultat
+    
+
+def merge_sort(lista: list) -> list:
+    if len(lista) <= 1:
+        return lista
+    else:
+        mij = len(lista) // 2
+        st = merge_sort(lista[:mij])
+        dr = merge_sort(lista[mij:])
+        return unire(st, dr)
     
 
 if __name__ == '__main__':
-    numar = int(input("Introduceti numarul problemei pe care doriti sa o rezolvati(1 -> ): "))
+    numar = int(input("Introduceti numarul problemei pe care doriti sa o rezolvati(1 -> 3): "))
     
     if numar == 1:
         print("Problema 1:\nSe da o matrice patratica. Sa se determine elementul care contine valoarea maxima si elementul care contine valoarea minima.\n")
@@ -95,4 +126,18 @@ if __name__ == '__main__':
         print("Rezolvare:")
         print("Matricea devine:")
         print(prob2(matrice))
+    elif numar == 3:
+        print("Merge sort.")
+        dim = int(input("Introduceti numarul de elemente din lista: "))
+        
+        lista = []
+        
+        for indice in range(dim):
+            lista.append(int(input(f'Introduceti elementul {indice + 1} al listei: ')))
+            
+        print("Lista sortata va fi:") 
+        print(merge_sort(lista))
+    else:
+        print("Nu s-a introdus o valoare valida.")
+            
             
