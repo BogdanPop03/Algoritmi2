@@ -48,7 +48,7 @@ def prob2(matrice: list) -> list:
 
 # Merge sort
 
-def unire(st: list, dr: list):
+def unire(st: list, dr: list) -> list:
     rezultat = []
     i, j = 0, 0
     
@@ -139,5 +139,4 @@ if __name__ == '__main__':
         print(merge_sort(lista))
     else:
         print("Nu s-a introdus o valoare valida.")
-            
             
