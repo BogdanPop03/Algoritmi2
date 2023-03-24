@@ -3,7 +3,6 @@
 from typing import Union
 
 # Problema 1
-
 def prob1():
     rest: int = int(input("Introduceti restul: "))
     
