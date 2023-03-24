@@ -66,12 +66,12 @@ def prob2():
     for indice in range(len(lista)):
         lista[indice] = 255 - lista[indice]
 
-    print(*lista)
+    print(*lista, sep = ", ")
     
     
 # Problema 3
-def prob3():
-    
+def prob3(numar: int) -> int:
+    return 255 - numar
         
             
 if __name__ == "__main__":
@@ -86,3 +86,7 @@ if __name__ == "__main__":
     prob2()
     
     # Problema 3
+    print("Problema 3:")
+    print("Se da o functie care primeste ca parametru un numar natural. Sa se returneze 255 - numarul dat.")
+    numar: int = int(input("Introduceti un numar natural: "))
+    print(prob3(numar))
