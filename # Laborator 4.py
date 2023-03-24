@@ -9,6 +9,8 @@ def prob1():
     lista_rezultat = [0] * len(lista_monede)
     
     for index, val in enumerate(reversed(lista_monede)):
+        if rest == 0:
+            break
         while val <= rest and rest != 0:
             rest -= val
             lista_rezultat[index] += 1
@@ -53,9 +55,34 @@ def prob1():
                 print(f'{lista_rezultat[indice]} moneda de 100 lei, ', end = "")
             else:
                 print(f'{lista_rezultat[indice]} monede de 100 lei, ', end = "")
+                
+                
+# Problema 2
+def prob2():
+    lista = []
+    for indice in range(3):
+        lista.append(int(input(f'Introduceti elementul {indice + 1} al listei: ')))
+        
+    for indice in range(len(lista)):
+        lista[indice] = 255 - lista[indice]
+
+    print(*lista)
+    
+    
+# Problema 3
+def prob3():
+    
+        
             
 if __name__ == "__main__":
     # Problema 1
     print("Problema 1:")
     print("Se introduce de la tastatura un rest monetar. Sa se determine una din combinatiile in care se poate oferi restul, cu ajutorul metodei Greedy.")
     prob1()
+    
+    # Problema 2
+    print("Problema 2:")
+    print("Se da o lista cu 3 elemente cu valori intre 0 si 255. Sa se modifice lista astfel incat valoarea de pe fiecare pozitie sa fie inversa fata de 255.")
+    prob2()
+    
+    # Problema 3
