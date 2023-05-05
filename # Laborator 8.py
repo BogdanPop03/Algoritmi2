@@ -45,8 +45,32 @@ def ex2():
     print(file.read(), end = "")
     
     
+# TEST   
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+    
+def ex_0379(n):
+    for i in range(2, n//2 + 1):
+        if is_prime(i) and n % i == 0:
+            j = n // i
+            if is_prime(j) and j != i:
+                print("DA")
+                return
+    print("NU")
+    return
+    
+    
 if __name__ == "__main__":
     print("ex1: ")
     ex1()
     print("\nex2: ")
     ex2()
+    
+    print("\nTEST: ")
+    ex_0379(10)
