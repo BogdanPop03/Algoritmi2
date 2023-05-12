@@ -5,6 +5,7 @@ lista_legaturi = [[0, 1],
                   [1, 2], 
                   [1, 3], 
                   [3, 4]]
+
 # Defineste matricea in forma unei matrici de adiacenta
 def matriceAdiacenta(lista_legaturi: list) -> list:
     nr_noduri = 0
@@ -25,10 +26,23 @@ def matriceAdiacenta(lista_legaturi: list) -> list:
         
     return matrice
     
+# Definirea listei de adiacenta
+def listaAdiacenta(matrice_adiacenta: list):
+    lista_adiacenta = [(rand, coloana) for rand in range(len(matrice_adiacenta)) for coloana in range(len(matrice_adiacenta)) if matrice_adiacenta[rand][coloana] != 0 and coloana > rand]
+    
+    return lista_adiacenta
+
     
 if __name__ == "__main__":
-    matrice = matriceAdiacenta(lista_legaturi)
+    matrice_adiacenta = matriceAdiacenta(lista_legaturi)
     
-    for linie in matrice:
-        print(linie, end='\n')
+    print('Matricea de adiacenta: ')
+    for linie in matrice_adiacenta:
+        print(*linie, end='\n')
+        
+    lista_adiacenta = listaAdiacenta(matrice_adiacenta)
+    
+    print('Lista de adiacenta: ')
+    for linie in lista_adiacenta:
+        print(f'{linie}', end=' ')
                 
