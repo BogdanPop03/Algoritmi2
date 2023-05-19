@@ -35,4 +35,3 @@ if __name__ == "__main__":
     parcurgereGraph(graph, 0, noduri_parcurse, flag)
     
     print(noduri_parcurse)
-    
