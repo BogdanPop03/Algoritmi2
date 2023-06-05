@@ -8,6 +8,8 @@ def solutie(numar1, numar2):
         linie = []
         for indice2 in range(numar2):
             aux += 1
+            if aux * 2 % 5 == 0:
+                aux += 1
             linie.append(aux * 2)
         matrice.append(linie)
     
