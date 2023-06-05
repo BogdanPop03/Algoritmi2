@@ -9,7 +9,7 @@ def validareDate(numar):
 
         print("Valid number entered:", number)
         
-        return numar
+        return int(numar)
 
     except ValueError as e:
         print("Invalid input:", str(e))
@@ -24,7 +24,7 @@ def solutie(numar):
     print(raspuns)         
 
 if __name__ == "__main__":
-    numar = int(input())
+    numar = input()
     
     numar = validareDate(numar)
     
